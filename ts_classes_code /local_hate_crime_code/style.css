@@ -7,10 +7,11 @@
         padding: 20px;
     }
   /* styles.css */
-img {
+.frederick_chart {
     width: 80%;  /* Resize the width to 80% of the container */
-    height: auto; /* Maintain the aspect ratio */
-    max-width: 600px; /* Max width to prevent it from being too large */
+    height: fit-content; /* Maintain the aspect ratio */
+    max-width: 30px; 
+
   }} 
 
 
