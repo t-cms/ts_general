@@ -1,0 +1,49 @@
+@media {
+    h1 {
+        font-family: "Migra", serif;
+        font-size: 72px;
+        padding: 30px, 30px, 30px, 30px; 
+    }
+    p {
+        font-size: 18px; 
+    }
+
+    button {
+        border-radius: 25px;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 50px;
+    }
+
+    #topper {
+        background-size: cover;
+        background-color: #d2aa9d;
+    }
+
+    #navigation {
+        background-color: #ebeced;
+        text-align: center;
+    }
+
+    h4 {
+        border-bottom: 2px solid block;
+        padding: 10px, 20px, 20px, 10px;
+    }
+}
+
+@media (min-width: 576px) {
+    h1 {
+        font-size: 50px;
+    }
+}
+body {background-color: #d2aa9d }
+hr { color: #ebeced; 
+}
+header {color: #ebeced; 
+    
+}
+h4 {font-family: "Migra", serif;
+    
+}

@@ -1,0 +1,16 @@
+@media (min-width: 768px) { 
+  body {
+    padding: 20px;
+  }
+
+    p {
+        padding: 20px;
+    }
+  /* styles.css */
+img {
+    width: 80%;  /* Resize the width to 80% of the container */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 600px; /* Max width to prevent it from being too large */
+  }} 
+
+
