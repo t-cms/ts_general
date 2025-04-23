@@ -1,4 +1,4 @@
-var ctx = document.getElementById('myscatterChart').getContext('2d');
+var ctx = document.getElementById('myscatterchart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'scatter', // Scatter chart type
     data: {
@@ -32,7 +32,8 @@ var myChart = new Chart(ctx, {
             ],
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
             borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
+            borderWidth: 1, 
+            radius: 5
         }]
     },
     options: {
