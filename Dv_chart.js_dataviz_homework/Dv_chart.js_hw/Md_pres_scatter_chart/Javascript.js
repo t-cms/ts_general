@@ -1,5 +1,5 @@
 var ctx = document.getElementById('myscatterchart').getContext('2d');
-var myChart = new Chart(ctx, {
+var myscatterChart = new Chart(ctx, {
     type: 'scatter', // Scatter chart type
     data: {
         datasets: [{

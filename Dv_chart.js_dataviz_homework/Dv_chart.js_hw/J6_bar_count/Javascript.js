@@ -1,5 +1,5 @@
     var ctx = document.getElementById('mybarChart').getContext('2d');
-        var myChart = new Chart(ctx, {
+        var mybarChart = new Chart(ctx, {
             type: 'bar', 
             data: {
                 labels: [
