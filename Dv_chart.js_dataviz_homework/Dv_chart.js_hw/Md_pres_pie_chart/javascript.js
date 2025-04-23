@@ -15,7 +15,7 @@
                 plugins: {
                     title: {
                         display: true,
-                        text: ' 2o20 MD Counties Presidential Election Results',
+                        text: ' 2020 MD Counties Presidential Election Results',
                         font: {
                             size: 18
                         }
