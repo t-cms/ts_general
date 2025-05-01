@@ -1,96 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Life Cycle Circles</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Life Cycle of Poverty</title>
   <style>
+    /* Base Styles */
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #5f5555;
       margin: 0;
-      background-color: #f0f0f0;
+      padding: 0;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .circle-container {
-      position: relative;
-      width: 500px;
-      height: 500px;
+    h1 {
+      font-family: 'Times New Roman', serif;
+      font-size: 2.5em;
+      font-weight: bold;
+      margin: 20px 0;
+      text-align: center;
+    }
+    
+    h2 { 
+    font-family: 'times new roman'; 
+    }
+    
+    p { font-family: 'times new roman'}
+
+    .subtitle {
+      font-size: 1.2em;
+      margin: 10px 20px;
+      text-align: center;
+      max-width: 800px;
     }
 
-    .circle {
-      position: absolute;
-      border-radius: 50%;
-      border: 2px solid #000;
-      transition: all 0.3s ease-in-out;
+    ul {
+      max-width: 800px;
+      margin: 20px auto;
+      padding-left: 20px;
     }
 
-    .circle-1 {
-      width: 100px;
-      height: 100px;
-      top: 50%;
-      left: 50%;
-      margin-top: -50px;
-      margin-left: -50px;
+    ul li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      font-family: 'Playfair Display', serif;
     }
 
-    .circle-2 {
+    /* Split Container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .project_series {
+      display: flex;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    .project_series .col-6 {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 0 10px;
+    }
+
+    .split-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    /* Cycle Container */
+    .cycle-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      margin: 50px 0;
+    }
+
+    .stage {
       width: 150px;
-      height: 150px;
-      top: 50%;
-      left: 50%;
-      margin-top: -75px;
-      margin-left: -75px;
+      margin: 10px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
     }
 
-    .circle-3 {
-      width: 200px;
-      height: 200px;
-      top: 50%;
-      left: 50%;
-      margin-top: -100px;
-      margin-left: -100px;
-    }
+    .stage:hover { transform: scale(1.1); }
+    .stage img { width: 100%; border-radius: 50%; }
+    .label { margin-top: 10px; font-weight: bold; }
 
-    .popup {
+    .arrow { width: 40px; }
+    .popup, .popup-second {
       position: absolute;
       background-color: #fff;
       border: 1px solid #000;
       padding: 10px;
       display: none;
-      transform: translate(-50%, -100%);
-      width: 200px;
+      width: 220px;
+      font-size: 0.9em;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 10;
     }
+    .popup { top: 0; left: 50%; transform: translate(-50%, -100%); }
+    .popup-second { bottom: 0; left: 50%; transform: translate(-50%, 10px); }
+    .stage:hover .popup, .stage:hover .popup-second { display: block; }
 
-    .circle:hover .popup {
-      display: block;
-    }
+    /* Carousel */
+    .carousel-container { width: 90%; overflow: hidden; margin: 30px auto; }
+    .carousel { display: flex; transition: transform 0.5s ease-in-out; }
+    .carousel img { height: 200px; margin-right: 20px; border-radius: 10px; }
+    .carousel-controls { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+    .carousel-controls button { padding: 5px 15px; cursor: pointer; }
   </style>
 </head>
 <body>
-  <div class="circle-container">
-    <div class="circle circle-1" data-info="Childhood">
-      <div class="popup">This is the childhood phase.</div>
+
+  <h1>The Impact of Poverty on Black Americans</h1>
+  <div class="subtitle"> <h2>Exploring the intergenerational cycle of childhood poverty to adulthood instability.</h2></div>
+
+  <img src="family_poverty.png" alt="family poverty" width="400" height="300" style="border-radius:15px; margin-bottom:30px;"/>
+
+  <h1>Brief Definition of Poverty</h1>
+  <ul>
+    <li>Poverty has far-reaching consequences affecting individuals, communities, and societies.</li>
+    <li>Poverty is a state where people or communities lack the resources to meet a minimum standard of living.</li>
+    <li>This can include a lack of financial resources, basic healthcare and education, clean drinking water, and infrastructure.</li>
+    <li>In the U.S., people of color face poverty at disproportionately higher rates due to systemic barriers, historical inequities, and ongoing discrimination.</li>
+  </ul>
+
+  <div class="container">
+  <div class="project_series" style="display: flex; flex-wrap: wrap;">
+    <div class="col-6" style="flex: 1;">
+      <img src="children-image.jpeg" alt="Poverty Illustration" class="split-image" style="width: 100%;" />
     </div>
-    <div class="circle circle-2" data-info="Adulthood">
-      <div class="popup">This is the adulthood phase.</div>
+    <div class="col-6" style="flex: 1; padding: 20px;">
+      <h2>Poverty Series</h2>
+      <p>
+        The poverty rate represents the percentage of individuals within a specific age group whose income falls below the federal poverty threshold. My visualization series explores the link between childhood poverty and long-term instability in adulthood. By measuring success across key indicators—career outcomes, educational attainment, financial security, health, and overall wealth—I aim to illustrate how early poverty can shape a person’s future trajectory. Lastly, I am focusing on Black Americans, as they often face greater systemic barriers and economic disparities that can compound the challenges of escaping poverty.
+      </p>
+
+      <!-- Flex container for percentages -->
+      <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <div style="flex: 1; text-align: center;">
+          <h1>5.2%</h1>
+          <h2>in 2021</h2>
+        </div>
+        <div style="flex: 1; text-align: center;">
+          <h1>12.4%</h1>
+          <h2>in 2022</h2>
+        </div>
+        <div style="flex: 1; text-align: center;">
+          <h1>13.7%</h1>
+          <h2>in 2023</h2>
+        </div>
+      </div>
     </div>
-    <div class="circle circle-3" data-info="Senior Years">
-      <div class="popup">This is the senior years phase.</div>
+  </div>
+</div>
+  
+
+
+  <div class="subtitle"> <h2>The Life Cycle of Poverty </h2></div>
+  <div class="cycle-container">
+    <div class="stage" data-info="Baby">
+      <img src="baby-image.png" alt="Baby" />
+      <div class="label">Baby</div>
+      <div class="popup">Born into poverty, early childhood development is limited.</div>
+      <div class="popup-second">High risk for developmental delays and poor health outcomes.</div>
+    </div>
+    <img src="right-arrow.png" alt="Arrow" class="arrow" />
+    <div class="stage" data-info="Child">
+      <img src="child-image.png" alt="Child" />
+      <div class="label">Child</div>
+      <div class="popup">Limited access to quality education and resources.</div>
+      <div class="popup-second">Lack of social support and educational opportunities.</div>
+    </div>
+    <img src="right-arrow.png" alt="Arrow" class="arrow" />
+    <div class="stage" data-info="Teenager">
+      <img src="teen-image.png" alt="Teenager" />
+      <div class="label">Teenager</div>
+      <div class="popup">Facing systemic barriers and fewer opportunities for growth.</div>
+      <div class="popup-second">Limited career prospects due to socioeconomic status.</div>
+    </div>
+    <img src="right-arrow.png" alt="Arrow" class="arrow" />
+    <div class="stage" data-info="Adult">
+      <img src="adult-image.png" alt="Adult" />
+      <div class="label">Adult</div>
+      <div class="popup">The cycle continues into adulthood, affecting opportunities.</div>
+      <div class="popup-second">Increased likelihood of poverty due to intergenerational factors.</div>
+    </div>
+  </div>
+
+  <!-- Carousel Section -->
+  <div class="subtitle">Slideshow of Related Images</div>
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <img src="slide1.jpg" alt="Slide 1" />
+      <img src="slide2.jpg" alt="Slide 2" />
+      <img src="slide3.jpg" alt="Slide 3" />
+    </div>
+    <div class="carousel-controls">
+      <button onclick="moveSlide(-1)">Prev</button>
+      <button onclick="moveSlide(1)">Next</button>
     </div>
   </div>
 
   <script>
-    // Optional: Add JavaScript if you want more interactivity
-    const circles = document.querySelectorAll('.circle');
-    
-    circles.forEach(circle => {
-      circle.addEventListener('click', function() {
-        alert('You clicked on: ' + circle.dataset.info);
-      });
+    // Stage click alerts
+    document.querySelectorAll('.stage').forEach(stage => {
+      stage.addEventListener('click', () => alert('You clicked on: ' + stage.dataset.info));
     });
+
+    // Carousel logic
+    let currentSlide = 0;
+    const carousel = document.getElementById('carousel');
+    const totalSlides = carousel.children.length;
+
+    function moveSlide(direction) {
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      const offset = currentSlide * -(carousel.children[0].offsetWidth + 20);
+      carousel.style.transform = `translateX(${offset}px)`;
+    }
   </script>
+
 </body>
 </html>
