@@ -24,18 +24,22 @@
       margin: 20px 0;
       text-align: center;
     }
-    
-    h2 { 
-    font-family: 'times new roman'; 
+
+    h2, p {
+      font-family: 'Times New Roman', serif;
     }
     
-    p { font-family: 'times new roman'}
+    h3 { 
+      font-family: 'Times New Roman', serif;
+       text-align: left;
+    }
 
     .subtitle {
-      font-size: 1.2em;
+     
       margin: 10px 20px;
       text-align: center;
       max-width: 800px;
+      font-family: 'monospace';
     }
 
     ul {
@@ -48,9 +52,9 @@
       margin-bottom: 10px;
       line-height: 1.6;
       font-family: 'Playfair Display', serif;
+      font-size: large
     }
 
-    /* Split Container */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -60,14 +64,15 @@
 
     .project_series {
       display: flex;
-      width: 100%;
+      flex-wrap: wrap;
       margin-bottom: 50px;
+    
     }
 
     .project_series .col-6 {
-      width: 50%;
-      box-sizing: border-box;
+      flex: 1;
       padding: 0 10px;
+      box-sizing: border-box;
     }
 
     .split-image {
@@ -77,13 +82,13 @@
       display: block;
     }
 
-    /* Cycle Container */
     .cycle-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 90%;
       margin: 50px 0;
+      flex-wrap: wrap;
     }
 
     .stage {
@@ -95,11 +100,24 @@
       cursor: pointer;
     }
 
-    .stage:hover { transform: scale(1.1); }
-    .stage img { width: 100%; border-radius: 50%; }
-    .label { margin-top: 10px; font-weight: bold; }
+    .stage:hover {
+      transform: scale(1.1);
+    }
 
-    .arrow { width: 40px; }
+    .stage img {
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    .label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .arrow {
+      width: 40px;
+    }
+
     .popup, .popup-second {
       position: absolute;
       background-color: #fff;
@@ -112,16 +130,174 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       z-index: 10;
     }
-    .popup { top: 0; left: 50%; transform: translate(-50%, -100%); }
-    .popup-second { bottom: 0; left: 50%; transform: translate(-50%, 10px); }
-    .stage:hover .popup, .stage:hover .popup-second { display: block; }
 
-    /* Carousel */
-    .carousel-container { width: 90%; overflow: hidden; margin: 30px auto; }
-    .carousel { display: flex; transition: transform 0.5s ease-in-out; }
-    .carousel img { height: 200px; margin-right: 20px; border-radius: 10px; }
-    .carousel-controls { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
-    .carousel-controls button { padding: 5px 15px; cursor: pointer; }
+    .popup {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+
+    .popup-second {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 10px);
+    }
+
+    .stage:hover .popup,
+    .stage:hover .popup-second {
+      display: block;
+    }
+
+    .carousel-container {
+  width: 90%;
+  max-width: 800px; /* Smaller width for a single image at a time */
+  overflow: hidden;
+  margin: 30px auto;
+  position: relative; /* For proper navigation control positioning */
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0; /* Ensures images dont shrink */
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.carousel-controls button {
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+    .pull-quote {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      font-size: 1.5em;
+      line-height: 1.4;
+      color: #222;
+      border-left: 4px solid #555;
+      padding-left: 20px;
+      margin: 40px auto;
+      max-width: 700px;
+      background-color: #f8f8f8;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+   
+    .definition { 
+  
+  background-color: #ede5e585;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;  
+    }
+    .flourish-embed { 
+      background-color: #ede5e585;
+      border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+    }
+    
+    .pull-quote {   
+    background-color:#ede5e585;
+      border-radius: 10px;
+    }
+    
+    .percentages { 
+   background-color:#ede5e585;
+      border-radius: 10px;
+    }
+    
+    .wealth-disparities { 
+    background-color: #ede5e585;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;  
+      font-family: 'times new roman'; 
+    
+    }
+    
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  
+}
+
+main {
+  width: 100%;
+}
+
+.scrolly-panel {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.8s ease;
+}
+
+.scrolly-panel.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+img {
+  max-height: 65vh;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.caption {
+  margin-top: 1.2rem;
+
+   background-color:#ede5e585; 
+  padding: 15px 25px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 80%;
+}
+
+    .concluding_graphic {
+  margin-top: 100px; /* Adds space between the last scrolly panel and the conclusion section */
+       background-color:#ede5e585; 
+      border-radius: 15px;
+      
+      
+}
+    
   </style>
 </head>
 <body>
@@ -129,110 +305,189 @@
   <h1>The Impact of Poverty on Black Americans</h1>
   <div class="subtitle"> <h2>Exploring the intergenerational cycle of childhood poverty to adulthood instability.</h2></div>
 
-  <img src="family_poverty.png" alt="family poverty" width="400" height="300" style="border-radius:15px; margin-bottom:30px;"/>
+<img src="family_poverty.png" alt="family_poverty" 
+     style="width: 500px !important; height: auto !important; border-radius: 15px; margin-bottom: 30px;" />
 
-  <h1>Brief Definition of Poverty</h1>
+    <div class="container">
+    <div class="definition">
+  <h1>Brief Definition of Poverty: </h1>
   <ul>
     <li>Poverty has far-reaching consequences affecting individuals, communities, and societies.</li>
     <li>Poverty is a state where people or communities lack the resources to meet a minimum standard of living.</li>
     <li>This can include a lack of financial resources, basic healthcare and education, clean drinking water, and infrastructure.</li>
     <li>In the U.S., people of color face poverty at disproportionately higher rates due to systemic barriers, historical inequities, and ongoing discrimination.</li>
   </ul>
+      
+      </div>
+  </div>
+  <div> <img src="dv_graphic.png" alt="my graphic"></div>
 
   <div class="container">
-  <div class="project_series" style="display: flex; flex-wrap: wrap;">
-    <div class="col-6" style="flex: 1;">
-      <img src="children-image.jpeg" alt="Poverty Illustration" class="split-image" style="width: 100%;" />
-    </div>
-    <div class="col-6" style="flex: 1; padding: 20px;">
-      <h2>Poverty Series</h2>
-      <p>
-        The poverty rate represents the percentage of individuals within a specific age group whose income falls below the federal poverty threshold. My visualization series explores the link between childhood poverty and long-term instability in adulthood. By measuring success across key indicators—career outcomes, educational attainment, financial security, health, and overall wealth—I aim to illustrate how early poverty can shape a person’s future trajectory. Lastly, I am focusing on Black Americans, as they often face greater systemic barriers and economic disparities that can compound the challenges of escaping poverty.
-      </p>
-
-      <!-- Flex container for percentages -->
-      <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-        <div style="flex: 1; text-align: center;">
-          <h1>5.2%</h1>
-          <h2>in 2021</h2>
-        </div>
-        <div style="flex: 1; text-align: center;">
-          <h1>12.4%</h1>
-          <h2>in 2022</h2>
-        </div>
-        <div style="flex: 1; text-align: center;">
-          <h1>13.7%</h1>
-          <h2>in 2023</h2>
-        </div>
+    <div class="project_series">
+      <div class="col-6">
+        <img src="children-image.jpeg" alt="Poverty Illustration" class="split-image" />
       </div>
+      <div class="col-6" style="padding: 20px;">
+        <h1>Poverty Series</h1>
+        <h3>
+          The poverty rate represents the percentage of individuals within a specific age group whose income falls below the federal poverty threshold. My visualization series explores the link between childhood poverty and long-term instability in adulthood. By measuring success across key indicatorscareer outcomes, educational attainment, financial security, health, and overall wealthI aim to illustrate how early poverty can shape a persons future trajectory. Lastly, I am focusing on Black Americans, as they often face greater systemic barriers and economic disparities that can compound the challenges of escaping poverty.
+        </h3>
+
+        <div style="margin-top: 20px;">
+  <div class="percentages" style="display: flex; justify-content: space-between; text-align: center; gap: 20px;">
+    <div style="flex: 1;">
+      <h1>5.2%</h1>
+      <h2>in 2021</h2>
+    </div>
+    <div style="flex: 1;">
+      <h1>12.4%</h1>
+      <h2>in 2022</h2>
+    </div>
+    <div style="flex: 1;">
+      <h1>13.7%</h1>
+      <h2>in 2023</h2>
     </div>
   </div>
 </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Embedded Map -->
+  <div style="width: 100%; max-width: 1200px; height: 350; margin: 40px auto;">
+    <div class="flourish-embed" data-src="visualisation/23035748" style="min-height: 600px;">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+    </div>
+  </div>
   
+  
+ <!-- Carousel Section -->
+<blockquote class="pull-quote">
+  Childhood, after all, is the first precious coin poverty steals from a child. ~ Anthony Horowitz
+</blockquote>
 
+<div class="carousel-container">
+  <div class="carousel" id="carousel">
+    <img src="poverty.jpeg" alt="Slide 1" />
+    <img src="family.jpeg" alt="Slide 2" />
+    <img src="protest.jpeg" alt="Slide 3" />
+  </div>
+  <div class="carousel-controls">
+    <button onclick="moveSlide(-1)">Prev</button>
+    <button onclick="moveSlide(1)">Next</button>
+  </div>
+</div>
 
-  <div class="subtitle"> <h2>The Life Cycle of Poverty </h2></div>
-  <div class="cycle-container">
-    <div class="stage" data-info="Baby">
-      <img src="baby-image.png" alt="Baby" />
-      <div class="label">Baby</div>
-      <div class="popup">Born into poverty, early childhood development is limited.</div>
-      <div class="popup-second">High risk for developmental delays and poor health outcomes.</div>
-    </div>
-    <img src="right-arrow.png" alt="Arrow" class="arrow" />
-    <div class="stage" data-info="Child">
-      <img src="child-image.png" alt="Child" />
-      <div class="label">Child</div>
-      <div class="popup">Limited access to quality education and resources.</div>
-      <div class="popup-second">Lack of social support and educational opportunities.</div>
-    </div>
-    <img src="right-arrow.png" alt="Arrow" class="arrow" />
-    <div class="stage" data-info="Teenager">
-      <img src="teen-image.png" alt="Teenager" />
-      <div class="label">Teenager</div>
-      <div class="popup">Facing systemic barriers and fewer opportunities for growth.</div>
-      <div class="popup-second">Limited career prospects due to socioeconomic status.</div>
-    </div>
-    <img src="right-arrow.png" alt="Arrow" class="arrow" />
-    <div class="stage" data-info="Adult">
-      <img src="adult-image.png" alt="Adult" />
-      <div class="label">Adult</div>
-      <div class="popup">The cycle continues into adulthood, affecting opportunities.</div>
-      <div class="popup-second">Increased likelihood of poverty due to intergenerational factors.</div>
+<script>
+  let currentSlide = 0;
+  const carousel = document.getElementById('carousel');
+  const totalSlides = carousel.children.length;
+
+  function moveSlide(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    const offset = currentSlide * -(carousel.children[0].offsetWidth);
+    carousel.style.transform = `translateX(${offset}px)`;
+  }
+</script>
+
+  <div style="width: 100%; max-width: 1200px; height: 350; margin: 40px auto;">
+  <div class="flourish-embed flourish-chart" data-src="visualisation/22920620"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/22920620/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-6 wealth-disparities">
+      <h1>Poverty and the Racial Wealth Gap: A Historical Perspective</h1>
+      <h4>
+        Poverty is deeply intertwined with the racial wealth gap, as historical and systemic discrimination has limited wealth accumulation for communities of color, particularly Black and Indigenous populations. This lack of generational wealth makes it harder for these communities to access quality education, healthcare, and homeownership opportunities, perpetuating cycles of poverty that persist across generations.
+      </h4>
+      <h4>
+        The roots of this inequality stretch back to slavery, where Black Americans were treated as property and denied the opportunity to build wealth or own land. Even after emancipation, policies like sharecropping, Jim Crow laws, redlining, and exclusion from New Deal programs continued to block Black families from acquiring assets or financial security. These institutional barriers created a foundation of economic disadvantage that has compounded over time, directly linking the legacy of slavery to present-day poverty and the racial wealth gap.
+      </h4>
+    
+      <div class="flourish-embed flourish-chart" data-src="visualisation/23041012"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/23041012/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+   
     </div>
   </div>
+</div>
+<blockquote class="pull-quote">
+  To be a poor man is hard, but to be a poor race in a land of dollars is the very bottom of hardships." ~ W.E.B DuBois 
+</blockquote>
+   <h1> Life Cycle of Poverty</h1>
+    <main>
+  
+    <section class="scrolly-panel">
+      <img src="baby.jpg" alt="Early Childhood">
+      <div class="caption">1. Early Childhood  <ul> <li>Limited access to healthcare</li> <li> Limited access to nurtritous foods 
+        </li> <li> Underfunded childcare and preschool programs</li></ul> </div>
+    </section>
 
-  <!-- Carousel Section -->
-  <div class="subtitle">Slideshow of Related Images</div>
-  <div class="carousel-container">
-    <div class="carousel" id="carousel">
-      <img src="slide1.jpg" alt="Slide 1" />
-      <img src="slide2.jpg" alt="Slide 2" />
-      <img src="slide3.jpg" alt="Slide 3" />
+    <section class="scrolly-panel">
+      <img src="toddler.jpg" alt="Grade School">
+      <div class="caption">2. Grade School <ul> <li>Exposure to environmental hazards (like lead or pollution)
+
+ </li> <li> Inadequate learning resources</li> <li>Food insecurity </li> <li>Increased absenteeism</li></ul> </div>
+    </section>
+
+    <section class="scrolly-panel">
+      <img src="IMG_7594%202.jpg" alt="Teen Years">
+      <div class="caption">3. Teen Years <ul><li>Academic pressure (struggling with grades, high expectations, lack of academic support)</li> <li>Limited access to career guidance (lack of mentorship or awareness of career opportunities)</li>  <li>Mental health struggles </li> <li>Increased risk of substance abuse</li> <li>Teen pregnancy (economic and educational setbacks, societal stigma)</li> <li>Barriers to higher education (lack of information or resources for college applications, financial limitations)</li> <li>Financial stress (contributing to household income, working multiple jobs)</li> <li>Difficulty transitioning to adulthood (uncertainty about the future, lack of life skills)</li></ul></div>
+    </section>
+
+    <section class="scrolly-panel">
+      <img src="teen.jpg" alt="Young Adulthood">
+      <div class="caption">4. Young Adulthood  <ul> <li>Limited access to quality education and job opportunities (Graduating from high school or college without the necessary skills for high-paying jobs)</li> <li>Underemployment or job insecurity</li> <li>Inability to buy property or build assets</li> <li>Starting a family with limited resources </li> <li>Generational trauma and mental health struggles</li> <li>Limited social capital </li></ul></div>
+    </section>
+    
+      <section class="scrolly-panel">
+      <img src="baby.jpg" alt="Early Childhood">
+      <div class="caption">1. Early Childhood (for original person's child--the cycle continues)  <ul> <li>Limited access to healthcare</li> <li> Limited access to nurtritous foods 
+        </li> <li> Underfunded childcare and preschool programs</li></ul> </div>
+    </section>
+      
+      
+  </main>
+  
+  <div class="container">
+  <div class="concluding_graphic row"> <!-- Added 'row' to enable columns -->
+    
+    <div class="col-6">
+      <h2>In conclusion:</h2>
+      <ul> 
+        <li>Breaking the cycle requires systemic change (Addressing systemic issues like unequal access to education, healthcare, and employment opportunities is crucial to breaking the cycle of intergenerational poverty.)</li>
+        <li>Investing in early intervention (Providing resources and support at early stages, from childhood through young adulthood, can help mitigate the long-term effects of poverty and create pathways for upward mobility.)</li>
+        <li>Empowering communities through access to wealth-building resources (Ensuring equal opportunities for wealth accumulation, such as access to homeownership, financial literacy education, and mentorship, can help lift families out of poverty and prevent future generations from facing the same barriers.)</li>
+      </ul>
     </div>
-    <div class="carousel-controls">
-      <button onclick="moveSlide(-1)">Prev</button>
-      <button onclick="moveSlide(1)">Next</button>
+    <div class= "col-6">
     </div>
-  </div>
+
+    
+
+
+</div>
+
 
   <script>
-    // Stage click alerts
-    document.querySelectorAll('.stage').forEach(stage => {
-      stage.addEventListener('click', () => alert('You clicked on: ' + stage.dataset.info));
+  const panels = document.querySelectorAll('.scrolly-panel');
+
+  function checkVisibility() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    panels.forEach(panel => {
+      const panelTop = panel.getBoundingClientRect().top;
+
+      if (panelTop < triggerBottom) {
+        panel.classList.add('active');
+      } else {
+        panel.classList.remove('active');
+      }
     });
+  }
 
-    // Carousel logic
-    let currentSlide = 0;
-    const carousel = document.getElementById('carousel');
-    const totalSlides = carousel.children.length;
-
-    function moveSlide(direction) {
-      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-      const offset = currentSlide * -(carousel.children[0].offsetWidth + 20);
-      carousel.style.transform = `translateX(${offset}px)`;
-    }
-  </script>
-
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('load', checkVisibility);
+</script>
+  </div>
 </body>
 </html>
